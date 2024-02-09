@@ -53,6 +53,7 @@ namespace Vector_Calculator
             return new Vector(v.x * scalar, v.y * scalar, v.z * scalar);
         }
 
+
         public static Vector Normalize(Vector v)
         {
             float s = 1 / v.GetMagnitude();
@@ -61,26 +62,24 @@ namespace Vector_Calculator
        
         public static float DotProduct(Vector v1, Vector v2)
         {
-            // ADD CODE HERE, THEN REMOVE BELOW LINE
-            throw new NotImplementedException();
+            return (v1.x*v2.x +v1.y*v2.y+v1.z*v2.z);
         }
 
         public static Vector CrossProduct(Vector v1, Vector v2)
         {
-            // ADD CODE HERE, THEN REMOVE BELOW LINE
-            throw new NotImplementedException();
+            return new Vector(v1.y*v2.z+v1.z*v2.y, v1.z*v2.x+v1.x*v2.z, v1.x*v2.y+v1.y*v2.x);
         }
 
-        public static Vector AngleBetween(Vector v1, Vector v2)
+        public static double AngleBetween(Vector v1, Vector v2)
         {
-            // ADD CODE HERE, THEN REMOVE BELOW LINE
-            throw new NotImplementedException();
+            return Math.Acos(DotProduct(v1, v2) / (v1.GetMagnitude() * v2.GetMagnitude())) * 180 / Math.PI;
+            
         }
 
         public static Vector ProjectOnto(Vector v1, Vector v2)
         {
-            // ADD CODE HERE, THEN REMOVE BELOW LINE
-            throw new NotImplementedException();
+            float c = DotProduct(v1, v2) / (MathF.Pow(v2.GetMagnitude(),2));
+            return Scale(v2,c);
         }
     }
 }

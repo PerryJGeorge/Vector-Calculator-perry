@@ -15,6 +15,7 @@ namespace Vector_Calculator
             Console.WriteLine(test1.GetMagnitude());
             Console.WriteLine(test3.GetDirection());
             Console.WriteLine(Vector.Normalize(test3));
+            Console.WriteLine(Vector.ProjectOnto(test2,test3));
         }
     }
 }
